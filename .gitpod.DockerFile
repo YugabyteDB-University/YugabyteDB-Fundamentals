@@ -2,6 +2,7 @@ FROM gitpod/workspace-full
 
 ARG YB_VERSION=2.19.2.0
 ARG YB_DOWNLOAD_URL=https://downloads.yugabyte.com/releases/2.19.2.0/yugabyte-2.19.2.0-b121-linux-x86_64.tar.gz
+ARG TPCC_DOWNLOAD_URL=https://github.com/yugabyte/tpcc/releases/download/2.1/tpcc.tar.gz
 # ARG YB_VERSION=2.20.0.0
 # ARG YB_DOWNLOAD_URL=https://downloads.yugabyte.com/releases/2.20.0.0/yugabyte-2.20.0.0-b76-linux-x86_64.tar.gz
 # ARG YB_VERSION=2.19.3.0
@@ -9,14 +10,23 @@ ARG YB_DOWNLOAD_URL=https://downloads.yugabyte.com/releases/2.19.2.0/yugabyte-2.
 ARG YB_PATH=/home/gitpod/yugabyte
 ARG YUGABYTED_PATH=/home/gitpod/var
 ARG YB_PATH_DATA=/home/gitpod/var
+ARG TPCC_PATH=/home/gitpod/tpcc
 
 ARG ROLE=gitpod
 
 USER root
 RUN mkdir -p $YB_PATH  \
-    && mkdir -p $YUGABYTED_PATH
+    && mkdir -p $YUGABYTED_PATH \ 
+    && mkdir -p $TPCC_PATH
 RUN chown -R $ROLE:$ROLE $YB_PATH \
-    && chown -R $ROLE:$ROLE $YUGABYTED_PATH
+    && chown -R $ROLE:$ROLE $YUGABYTED_PATH \
+    && chown -R $ROLE:$ROLE $TPCC_PATH
+
+USER $ROLE
+RUN curl -sSLo ./tpcc.tar.gz $TPCC_DOWNLOAD_URL  \
+  && tar -xvf tpcc.tar.gz -C $TPCC_PATH --strip-components=1 \
+  && chmod +x $TPCC_PATH/* \
+  && rm ./tpcc.tar.gz
 
 USER $ROLE
 RUN curl -sSLo ./yugabyte.tar.gz $YB_DOWNLOAD_URL  \
@@ -28,12 +38,13 @@ RUN echo "\n# yugabytedb executable path" >> ~/.bashrc
 RUN echo "export PATH=\$PATH:$YB_PATH/bin/" >> ~/.bashrc
 
 # change this per repo
-ENV MY_GITPOD_REPO=YSQL-Development
+ENV MY_GITPOD_REPO=YugabyteDB-Fundamentals
 ENV N1=1
 ENV N2=2
 ENV N3=3
 
 ENV YB_PATH=/home/gitpod/yugabyte
+ENV TPCC_PATH=/home/gitpod/yugabyte
 ENV YB_PATH_DATA=/home/gitpod/var
 ENV YUGABYTED_PATH=/home/gitpod/var
 ENV MASTER_WEB_PORT=7000
