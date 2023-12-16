@@ -66,4 +66,4 @@ Then, in a browser, open the Gitpod link for the GitHub repository. It's a prefi
 ### Release notes
 Notes regarding updates to this repository.
 - 2023.12.15
-  - TPPC
+  - TPCC
