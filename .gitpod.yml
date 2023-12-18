@@ -16,7 +16,6 @@ tasks:
         --advertise_address="127.0.0.1"  \
         --base_dir=/home/gitpod/var/node1  \
         --cloud_location=cloud1.region1.zone1  \
-        --fault_tolerance=zone  \
         --master_flags="yb_num_shards_per_tserver=1,ysql_num_shards_per_tserver=1,ysql_beta_features=true,ysql_enable_packed_row=false"  \
         --master_webserver_port=7000  \
         --tserver_flags="yb_num_shards_per_tserver=1,ysql_num_shards_per_tserver=1,ysql_beta_features=true,ysql_enable_packed_row=false"  \
@@ -25,7 +24,6 @@ tasks:
         --advertise_address="127.0.0.2"  \
         --base_dir=/home/gitpod/var/node2  \
         --cloud_location=cloud1.region1.zone2  \
-        --fault_tolerance=zone  \
         --join="127.0.0.1"  \
         --master_flags="yb_num_shards_per_tserver=1,ysql_num_shards_per_tserver=1,ysql_beta_features=true,ysql_enable_packed_row=false"  \
         --master_webserver_port=7000  \
@@ -35,7 +33,6 @@ tasks:
         --advertise_address="127.0.0.3"  \
         --base_dir=/home/gitpod/var/node3  \
         --cloud_location=cloud1.region1.zone3  \
-        --fault_tolerance=zone  \
         --join="127.0.0.1"  \
         --master_flags="yb_num_shards_per_tserver=1,ysql_num_shards_per_tserver=1,ysql_beta_features=true,ysql_enable_packed_row=false"  \
         --master_webserver_port=7000  \

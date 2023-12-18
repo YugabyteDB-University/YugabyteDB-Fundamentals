@@ -15,6 +15,9 @@ ARG TPCC_PATH=/home/gitpod/tpcc
 ARG ROLE=gitpod
 
 USER root
+SHELL ["/bin/bash", "-c"]
+RUN source "/home/gitpod/.sdkman/bin/sdkman-init.sh"  \
+    && sdk install java < /dev/null    
 RUN mkdir -p $YB_PATH  \
     && mkdir -p $YUGABYTED_PATH \ 
     && mkdir -p $TPCC_PATH
@@ -36,6 +39,9 @@ RUN curl -sSLo ./yugabyte.tar.gz $YB_DOWNLOAD_URL  \
 RUN $YB_PATH/bin/post_install.sh
 RUN echo "\n# yugabytedb executable path" >> ~/.bashrc
 RUN echo "export PATH=\$PATH:$YB_PATH/bin/" >> ~/.bashrc
+
+FROM gitpod/workspace-full:2022-10-25-06-57-58
+
 
 # change this per repo
 ENV MY_GITPOD_REPO=YugabyteDB-Fundamentals
