@@ -53,6 +53,7 @@ RUN curl -sSLo ./tpcc.tar.gz $TPCC_DOWNLOAD_URL  \
 
 # change this per repo
 ENV MY_GITPOD_REPO=YugabyteDB-Fundamentals
+ENV PATH="$YB_BIN_PATH/bin/:$PATH"
 ENV N1=1
 ENV N2=2
 ENV N3=3
