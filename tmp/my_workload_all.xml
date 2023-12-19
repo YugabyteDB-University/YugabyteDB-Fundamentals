@@ -16,7 +16,7 @@
     <useKeyingTime>true</useKeyingTime>
     <useThinkTime>true</useThinkTime>
     <enableForeignKeysAfterLoad>true</enableForeignKeysAfterLoad>
-    <hikariConnectionTimeoutMs>180000</hikariConnectionTimeoutMs>
+    <hikariConnectionTimeoutMs>600</hikariConnectionTimeoutMs>
     <useStoredProcedures>true</useStoredProcedures>
     <displayEnhancedLatencyMetrics>false</displayEnhancedLatencyMetrics>
     <trackPerSQLStmtLatencies>false</trackPerSQLStmtLatencies>
@@ -24,7 +24,7 @@
    	<transactiontypes>
         <transaction>
             <name>NewOrder</name>
-            <weight>45</weight>
+            <weight>43</weight>
         </transaction>
         <transaction>
             <name>Payment</name>
@@ -40,12 +40,12 @@
         </transaction>
         <transaction>
             <name>StockLevel</name>
-            <weight>4</weight>
+            <weight>6</weight>
         </transaction>
    	</transactiontypes>
 
-    <runtime>1800</runtime>
-    <rate>10000</rate>
+    <runtime>600</runtime>
+    <rate>100</rate>
     <!--
       Set the number of retries to 0 as retrying when the number of warehouses is
       high is pointless as it just leads to more failures.
