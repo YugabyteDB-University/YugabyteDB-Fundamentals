@@ -13,7 +13,7 @@ This repository is a lab resource in the free, **YugabyteDB Fundamentals** cours
 >
 
 ---
-<div style="width:100%; background-color: #000041"><img src="assets/Gitpod_Fundamentals.gif" /></div>
+<div style="width:100%; background-color: #000041"><img src="assets/Gitpod_YugabyteDB_Fundamentals.gif" /></div>
 
 To start the Gitpod environment, which is also free to use, select the link below. All you need is a Github account.
 
