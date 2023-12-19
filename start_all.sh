@@ -26,7 +26,7 @@ start_node() {
       --tserver_flags="yb_num_shards_per_tserver=1,ysql_num_shards_per_tserver=1,ysql_beta_features=true,ysql_enable_packed_row=false" \
       --tserver_webserver_port=${tserver_webserver_port}  ${join_arg} > /dev/null 2>&1
     
-    sleep 2
+    sleep 3
 
     status=`yugabyted status --base_dir=${YB_PATH_BASE}/node${node_number} | grep Status | sed 's/.*: //; s/|.*//'`
 
@@ -40,7 +40,7 @@ start_node() {
 this_number=1
 while [ ${this_number} -le 3 ]; do
     start_node ${this_number}
-    sleep 1
+    sleep 3
     this_number=$((this_number + 1))
 done
 
@@ -56,7 +56,7 @@ else
   yugabyted configure data_placement  \
     --base_dir=${YB_PATH_BASE}/node1  \
     --fault_tolerance=zone > /dev/null 2>&1
-  
+  sleep 1
   echo "All nodes should be up. Let's take a look using yugabyted status"
   yugabyted status --base_dir=${YB_PATH_BASE}/node1 
   echo "All nodes should be up. Let's take a look using yb_servers()"

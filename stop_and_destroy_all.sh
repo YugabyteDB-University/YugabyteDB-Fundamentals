@@ -2,9 +2,9 @@
 YB_PATH_BASE=/home/gitpod/yugabyte/var
 
 echo "Destroying nodes..."
-tot_num_nodes=3
+NUMBER_NODES=3
 
-for (( n=1; n<=$tot_num_nodes; n++ ))
+for (( NODE_NUM=1; n<=$NUMBER_NODES; n++ ))
 do
-  yugabyted destroy --base_dir=$YB_PATH_BASE/node$n > /dev/null &
+  yugabyted destroy --base_dir=$YB_PATH_BASE/node$NODE_NUM > /dev/null &
 done
