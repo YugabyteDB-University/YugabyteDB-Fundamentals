@@ -1,15 +1,15 @@
-<div style="width:100%; background-color: #000041"><a target="_blank" href="http://university.yugabyte.com"><img src="assets/YBU_Logo.png" /></a></div>
+<div style="width:100%; background-color: #000041"><a target="_blank" href="http://university.yugabyte.com/?utm_source=gitpod&utm_medium=notebook"><img src="assets/YBU_Logo.png" /></a></div>
 
 # Fundamentals
 
-[YugabyteDB](https://www.yugabyte.com/) is the leading open source, distributed SQL database. The database has two APIs: YCQL and YSQL.
+[YugabyteDB](https://www.yugabyte.com/?utm_source=gitpod&utm_medium=notebook) is the leading open source, distributed SQL database. The database has two APIs: YCQL and YSQL.
 
 This repository is a lab resource in the free, **YugabyteDB Fundamentals** course from Yugabyte University.
 
 > **YugabyteDB Fundamentals**
 >
 > Enroll for **FREE** at ...
-> [Yugabyte University](https://university.yugabyte.com/courses/yugabytedb-fundamentals).
+> [Yugabyte University](https://university.yugabyte.com/courses/yugabytedb-fundamentals?utm_source=gitpod&utm_medium=notebook).
 >
 
 ---
@@ -23,7 +23,7 @@ Gitpod is an on-demand developer environment for a GitHub, Git, or BitBucket wor
 
 Using Gitpod, you can run the notebook files in an on-demand VS Code, browser based environment. 😎
 
-This repository contains the notebook files for Fundamentals, a free course that is soon-to-be available at [university.yugabyte.com](https://university.yugabyte.com).
+This repository contains the notebook files for Fundamentals, a free course that is soon-to-be available at [university.yugabyte.com](https://university.yugabyte.com?utm_source=gitpod&utm_medium=notebook).
 
 Using Gitpod, you can run the notebook files in an on-demand VS Code, browser based environment.
 
@@ -69,14 +69,16 @@ Then, in a browser, open the Gitpod link for the GitHub repository. It's a prefi
   - 3) `.\start_all.sh zone`
 
 **I'm still running into issues. Where can I find help and support?**
-- You can ask questions our community Slack in the #training channel at [YugabyteDB Community Slack](https://join.slack.com/t/yugabyte-db/shared_invite/zt-xbd652e9-3tN0N7UG0eLpsace4t1d2A/).
+- You can ask questions our community Slack in the #training channel at [YugabyteDB Community Slack](https://join.slack.com/t/yugabyte-db/shared_invite/zt-xbd652e9-3tN0N7UG0eLpsace4t1d2A/?utm_source=gitpod&utm_medium=notebook).
 
 
 
 ---
 ### Release notes
 Notes regarding updates to this repository.
-- 2023.12.19
+- 202430131
+  - Update to 2.20.1
+- 20231219
   - Fixes to start and destroy scripts
-- 2023.12.15
+- 20231215
   - TPCC
